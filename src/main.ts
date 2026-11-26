@@ -1,13 +1,12 @@
-import { createServer } from "node:http"
+import express, { type Express } from "express"
+import { mainRouter } from "./controllers/main.controller.js"
 
-
-const hostname = '127.0.0.1'
+const app: Express = express()
 const port = 3000
-const server = createServer((req, res)=> {
-  res.statusCode = 200
-  res.setHeader('Content-Type', 'text/plain')
-  res.end('hello world')
-})
-server.listen(port, hostname, ()=> {
-  console.log(`server running at the http://${hostname}:${port}/`)
+
+app.use(express.json())
+app.use(mainRouter)
+
+app.listen(port, ()=> {
+  console.log(`app listening on port ${port}`)
 })

@@ -8,7 +8,6 @@
     "dev": "tsx watch --tsconfig ./tsconfig.app.json ./src/main.ts",
     "check": "tsc --noEmit",
     "build": "tsc -p ./tsconfig.app.json"
-
   },
   "keywords": [],
   "author": "",
@@ -16,8 +15,14 @@
   "type": "module",
   "devDependencies": {
     "@tsconfig/node24": "^24.0.6",
+    "@types/express": "^5.0.6",
+    "@types/luxon": "^3.7.6",
     "@types/node": "^26.6.11",
+    "luxon": "^3.7.2",
     "tsx": "^4.23.15",
     "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
   }
 }
